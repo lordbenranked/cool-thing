@@ -1,1 +1,77 @@
+<!doctype html>
 
+<html>
+
+<head>
+
+  <meta charset="utf-8" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Deep Sea — Neal-ish</title>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <style>
+
+    body{height:100%;margin:0}
+
+    .ocean{height:400vh;background:linear-gradient(#05223f,#02040a);color:#fff;padding:40px}
+
+    .marker{position:fixed;right:20px;top:20px;background:rgba(0,0,0,.4);padding:8px;border-radius:8px}
+
+    .creature{font-size:24px;margin-top:120vh}
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="ocean">
+
+    <div class="marker" id="depth">Surface</div>
+
+    <h1>Deep Sea Dive</h1>
+
+    <p>Scroll down to dive deeper.</p>
+
+
+
+    <div class="creature" style="margin-top:40vh">🐟 Tidal fish — 200m</div>
+
+    <div class="creature" style="margin-top:60vh">🦑 Giant squid — 700m</div>
+
+    <div class="creature" style="margin-top:80vh">🦀 Abyssal crab — 2000m</div>
+
+    <div class="creature" style="margin-top:100vh">🪼 Hadal phantom — 11,000m</div>
+
+  </div>
+
+
+
+  <script>
+
+    const depth = document.getElementById('depth')
+
+    window.addEventListener('scroll', ()=>{
+
+      const sc = window.scrollY
+
+      if(sc < 400) depth.textContent = 'Surface — 0m'
+
+      else if(sc < 1000) depth.textContent = '200m — Tidal Zone'
+
+      else if(sc < 2000) depth.textContent = '700m — Twilight Zone'
+
+      else if(sc < 3000) depth.textContent = '2000m — Midnight Zone'
+
+      else depth.textContent = 'Hadal Zone — ~11,000m'
+
+    })
+
+  </script>
+
+</body>
+
+</html>
