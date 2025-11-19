@@ -1,1 +1,13 @@
+:root{--bg:#0f0f12;--fg:#e6e6e9;--accent:#6ee7b7}
 
+*{box-sizing:border-box}
+
+html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,Arial}
+
+.site-header{display:flex;gap:20px;align-items:center;padding:18px}
+
+.site-header h1{margin:0;font-size:20px}
+
+nav a{color:var(--accent);text-decoration:none;margin-right:12px}
+
+.container{padding:24px}
