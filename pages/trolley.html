@@ -1,1 +1,56 @@
+<!doctype html>
+
+<html>
+
+<head><meta charset="utf-8"/><meta name="viewport"content="width=device-width,initial-scale=1"/><title>Absurd Trolley</title><link rel="stylesheet" href="/assets/css/main.css"></head>
+
+<body style="padding:24px">
+
+  <h1>Absurd trolley problems</h1>
+
+  <div id="q"></div>
+
+  <button id="next">next</button>
+
+
+
+  <script>
+
+    const Q = [
+
+      "A trolley will hit 5 cats vs 1 dog wearing a tiny hat. Save who?",
+
+      "You can push a button to turn everybody into cheese. Do it?",
+
+      "If you pull the lever, all the politicians become caffeinated sloths."
+
+    ];
+
+    let i=0
+
+    const qEl=document.getElementById('q')
+
+    const next=document.getElementById('next')
+
+    function show(){
+
+      qEl.innerHTML = '<p>'+Q[i]+'</p><div><button onclick="vote(true)">save</button> <button onclick="vote(false)">let</button></div>'
+
+    }
+
+    window.vote = function(v){
+
+      qEl.innerHTML = '<p>you chose '+(v?'save':'let')+'</p>'
+
+    }
+
+    next.addEventListener('click', ()=>{ i=(i+1)%Q.length; show() })
+
+    show()
+
+  </script>
+
+</body>
+
+</html>
 
